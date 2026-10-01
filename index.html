@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>اتحاد رغمنوف | لعبة استراتيجية</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div><div class="eyebrow">محاكاة سياسية واستراتيجية</div><h1>اتحاد رغمنوف</h1></div>
+    <div class="turn">الدور <strong id="turn">1</strong> <span>من عمر الجمهورية</span></div>
+  </header>
+  <main class="layout">
+    <section class="panel map-panel">
+      <div class="section-heading"><div><p class="eyebrow">المسرح السياسي</p><h2>خريطة الجمهوريات</h2></div><span class="live-dot">تجريبي</span></div>
+      <p class="muted">اختر إقليمًا لمراجعة وضعه. الخريطة تخطيطية في هذه النسخة الأولية.</p>
+      <svg class="map" viewBox="0 0 640 390" role="img" aria-label="خريطة تخطيطية للجمهوريات الثلاث">
+        <path class="territory selected" data-region="ragmanov" d="M72 93 L163 46 L257 67 L300 125 L266 194 L183 220 L105 180 Z"/>
+        <path class="territory" data-region="north" d="M257 67 L366 42 L468 83 L502 153 L421 190 L300 125 Z"/>
+        <path class="territory" data-region="south" d="M183 220 L266 194 L300 125 L421 190 L398 274 L305 328 L193 302 L133 257 Z"/>
+        <path class="border-line" d="M257 67 L300 125 L266 194 L183 220 M300 125 L421 190"/>
+        <text x="171" y="133">رغمنوف</text><text x="390" y="112">الجمهورية الشمالية</text><text x="285" y="260">الجمهورية الجنوبية</text>
+        <circle cx="174" cy="158" r="6" class="capital"/><text x="190" y="165" class="city">العاصمة</text>
+      </svg>
+      <div class="region-info" id="region-info"><strong>رغمنوف</strong><span>أكبر الجمهوريات ومركز الثقل السياسي.</span></div>
+      <div class="legend"><span><i class="legend-main"></i> مركز الاتحاد السابق</span><span><i class="legend-other"></i> جمهوريات اتحادية</span></div>
+    </section>
+    <aside class="side">
+      <section class="panel stats-panel">
+        <p class="eyebrow">مؤشرات الدولة</p><h2>تقرير الرئاسة</h2>
+        <div class="stat"><span>الخزانة</span><strong id="money">1,000</strong><small>مليون وحدة</small></div>
+        <div class="stat"><span>استقرار الدولة</span><strong id="stability">54%</strong><div class="meter"><i id="stability-bar" style="width:54%"></i></div></div>
+        <div class="stat"><span>تأييد الشعب</span><strong id="support">48%</strong><div class="meter"><i id="support-bar" style="width:48%"></i></div></div>
+        <div class="stat"><span>جاهزية الجيش</span><strong id="army">42%</strong><div class="meter"><i id="army-bar" style="width:42%"></i></div></div>
+      </section>
+      <section class="panel advisors">
+        <p class="eyebrow">مجلس المستشارين</p><h2>مذكرات اليوم</h2>
+        <div class="advisor"><span class="avatar">م</span><div><strong>مستشار الاقتصاد</strong><p>تجنب الإنفاق الكبير قبل استعادة الاستقرار.</p></div></div>
+        <div class="advisor"><span class="avatar">ع</span><div><strong>مستشار الأمن</strong><p>الجيش يحتاج إلى تحديث، لكن التوسع قد يقلق الجيران.</p></div></div>
+      </section>
+    </aside>
+    <section class="panel decisions">
+      <div class="section-heading"><div><p class="eyebrow">مكتب الرئيس</p><h2>أوامر هذا الدور</h2></div><span class="muted">كل قرار يغيّر مؤشرات الدولة</span></div>
+      <div class="actions">
+        <button class="action" data-action="economy"><span class="action-icon">₽</span><strong>تنشيط الاقتصاد</strong><small>تكلفة 100 · الخزانة +180 لاحقًا</small></button>
+        <button class="action" data-action="army"><span class="action-icon">⚑</span><strong>تحديث الجيش</strong><small>تكلفة 160 · الجاهزية +12</small></button>
+        <button class="action" data-action="reform"><span class="action-icon">⚖</span><strong>إصلاحات إدارية</strong><small>تكلفة 80 · الاستقرار +8</small></button>
+        <button class="action" data-action="diplomacy"><span class="action-icon">✦</span><strong>مبادرة دبلوماسية</strong><small>تكلفة 60 · الاستقرار والتأييد +4</small></button>
+      </div>
+      <div class="bottom-row"><div id="message" class="message">الرئيس، الدولة تمر بمرحلة انتقالية. اختر أول أوامرك.</div><button id="next-turn" class="primary">إنهاء الدور ←</button></div>
+    </section>
+    <section class="panel log-panel"><h2>سجل الأحداث</h2><ol id="log"><li>تسلّمت الرئاسة بعد انهيار الحكومة الاتحادية.</li><li>ثلاث جمهوريات تبحث عن مستقبلها السياسي.</li></ol></section>
+  </main>
+  <footer>نسخة أولية قابلة للتطوير · Ragmanov Strategy</footer>
+  <script src="game.js"></script>
+</body>
+</html>
