@@ -16,13 +16,39 @@
     <section class="panel map-panel">
       <div class="section-heading"><div><p class="eyebrow">المسرح السياسي</p><h2>خريطة الجمهوريات</h2></div><span class="live-dot">تجريبي</span></div>
       <p class="muted">اختر إقليمًا لمراجعة وضعه. الخريطة تخطيطية في هذه النسخة الأولية.</p>
-      <svg class="map" viewBox="0 0 640 390" role="img" aria-label="خريطة تخطيطية للجمهوريات الثلاث">
-        <path class="territory selected" data-region="ragmanov" d="M72 93 L163 46 L257 67 L300 125 L266 194 L183 220 L105 180 Z"/>
-        <path class="territory" data-region="north" d="M257 67 L366 42 L468 83 L502 153 L421 190 L300 125 Z"/>
-        <path class="territory" data-region="south" d="M183 220 L266 194 L300 125 L421 190 L398 274 L305 328 L193 302 L133 257 Z"/>
-        <path class="border-line" d="M257 67 L300 125 L266 194 L183 220 M300 125 L421 190"/>
-        <text x="171" y="133">رغمنوف</text><text x="390" y="112">الجمهورية الشمالية</text><text x="285" y="260">الجمهورية الجنوبية</text>
-        <circle cx="174" cy="158" r="6" class="capital"/><text x="190" y="165" class="city">العاصمة</text>
+      <svg class="map" viewBox="0 0 760 470" role="img" aria-label="خريطة سياسية تفصيلية لاتحاد رغمنوف والجمهوريات الثلاث">
+        <defs>
+          <pattern id="mapGrid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#8ba5bf" stroke-opacity=".09" stroke-width="1"/></pattern>
+          <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#102c42"/><stop offset="1" stop-color="#1c4055"/></linearGradient>
+        </defs>
+        <rect x="3" y="3" width="754" height="464" rx="18" fill="url(#sea)" stroke="#49657c" stroke-width="2"/>
+        <rect x="4" y="4" width="752" height="462" rx="18" fill="url(#mapGrid)"/>
+        <path d="M30 82L72 49 127 61 158 40 214 53 244 77 294 63 331 83 378 59 418 74 460 58 506 78 547 67 584 94 635 88 692 120 718 162 701 202 720 246 689 291 704 337 665 384 623 402 591 436 536 427 491 446 443 423 391 437 348 410 306 424 260 397 218 410 181 376 140 368 111 330 76 310 65 266 43 224 56 183 34 137Z" fill="#263b45" opacity=".72"/>
+        <!-- أراضي الجمهوريات -->
+        <path class="territory selected" data-region="ragmanov" d="M76 128L123 82 184 74 231 96 266 133 257 180 279 218 252 262 213 291 166 281 129 305 91 278 67 235 83 194 59 161Z"/>
+        <path class="territory" data-region="north" d="M184 74L242 43 304 53 343 38 397 60 435 50 480 78 523 72 565 101 612 98 652 126 670 164 642 191 601 187 570 212 529 197 490 220 449 202 412 216 373 192 330 204 279 218 257 180 266 133 231 96Z"/>
+        <path class="territory" data-region="south" d="M129 305L166 281 213 291 252 262 279 218 330 204 373 192 412 216 449 202 490 220 529 197 570 212 601 187 642 191 670 164 695 197 682 238 700 270 671 303 650 341 617 361 591 394 545 385 506 407 462 390 420 408 381 385 344 397 306 375 269 389 237 366 198 377 171 353 143 357Z"/>
+        <!-- تقسيمات إدارية داخلية -->
+        <g class="province-lines">
+          <path d="M111 115L150 158 130 210 166 281 M184 74L184 122 231 151 257 180 M83 194L151 205 213 291 M330 204L343 153 397 125 435 50 M279 218L330 204 373 192 M412 216L421 157 490 142 523 72 M449 202L490 220 529 197 565 101 M570 212L574 272 617 361 M373 192L381 258 344 315 381 385 M252 262L269 323 237 366 M449 202L462 275 420 408 M529 197L506 260 545 310 506 407 M166 281L198 329 171 353" />
+        </g>
+        <!-- طرق رئيسية ونهر -->
+        <path class="map-river" d="M297 68C281 112 314 139 300 174S325 235 306 267 333 331 320 380"/>
+        <path class="map-road" d="M176 176C244 165 283 190 337 177S443 171 492 181 576 168 620 153 M176 176C221 226 265 260 310 283S399 318 449 327 548 325 620 300"/>
+        <g class="city-markers">
+          <circle cx="176" cy="176" r="7" class="capital"/><circle cx="176" cy="176" r="13" class="capital-ring"/>
+          <circle cx="338" cy="177" r="5"/><circle cx="448" cy="171" r="5"/><circle cx="565" cy="169" r="5"/>
+          <circle cx="310" cy="283" r="5"/><circle cx="449" cy="327" r="5"/><circle cx="620" cy="300" r="5"/>
+        </g>
+        <g class="map-labels">
+          <text x="174" y="145" class="region-label">رغمنوف</text><text x="174" y="198" class="city-label">العاصمة</text>
+          <text x="411" y="105" class="region-label">سيفير</text><text x="495" y="245" class="region-label">أورلين</text>
+          <text x="335" y="161" class="small-city">نوفا</text><text x="451" y="153" class="small-city">ميناء الشمال</text>
+          <text x="565" y="150" class="small-city">فيسترا</text><text x="302" y="304" class="small-city">دالين</text>
+          <text x="449" y="348" class="small-city">أورلوف</text><text x="620" y="321" class="small-city">منجم الشرق</text>
+        </g>
+        <g class="map-compass"><path d="M704 48L714 75 704 69 694 75Z" fill="#e2b86c"/><text x="704" y="39">ش</text></g>
+        <text x="25" y="445" class="map-caption">اتحاد رغمنوف • خريطة سياسية تخطيطية</text>
       </svg>
       <div class="region-info" id="region-info"><strong>رغمنوف</strong><span>أكبر الجمهوريات ومركز الثقل السياسي.</span></div>
       <div class="legend"><span><i class="legend-main"></i> مركز الاتحاد السابق</span><span><i class="legend-other"></i> جمهوريات اتحادية</span></div>
