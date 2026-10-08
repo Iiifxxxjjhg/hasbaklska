@@ -15,3 +15,6 @@
 .map .small-city{font-size:10px;fill:#f1f5f9;font-weight:600}
 .map .map-compass text{font-size:13px;fill:#e2b86c}
 .map .map-caption{font-size:10px;fill:#c0d1df;text-anchor:start;direction:rtl}
+
+/* Allow longer dynamic Arabic recommendations to wrap on narrow screens. */
+.advisor>div{min-width:0;overflow-wrap:anywhere}
